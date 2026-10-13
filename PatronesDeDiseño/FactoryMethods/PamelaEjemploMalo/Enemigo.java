@@ -1,0 +1,39 @@
+public abstract class Enemigo{
+    protected String nombre;
+    protected int vida;
+    protected int ataque;
+
+    public Enemigo(String nombre, int vida, int ataque){
+        this.nombre = nombre;
+        this.vida = vida;
+        this.ataque = ataque;
+    }
+
+    public abstract void atacar();
+
+    public void recibirDaño(int daño){
+        this.vida -= daño;
+
+        if (this.vida < 0){
+            this.vida = 0;
+        }
+    }
+
+    public boolean estaVivo(){
+        return this.vida > 0;
+    }
+
+    public String getNombre(){
+        return this.nombre;
+    }
+
+    public int getVida(){
+        return this.vida;
+    }
+
+    public int getAtaque(){
+        return this.ataque;
+    }
+
+
+}
